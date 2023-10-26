@@ -13,6 +13,7 @@ const produtos = [
 {id:8, nome: "nome", preco:"400", descricao: "descricao", imagem:""},
 {id:9, nome: "nome", preco:"400", descricao: "descricao", imagem:""},
 {id:10, nome: "nome", preco:"400", descricao: "descricao", imagem:""},
+
 ]
 
 app.set('view engine', 'ejs');
