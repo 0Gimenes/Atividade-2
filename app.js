@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+
 const produtos = [
 {id:1, nome: "nome", preco:"400", descricao: "descricao", imagem:""},
 {id:2, nome: "nome", preco:"400", descricao: "descricao", imagem:""},
@@ -15,6 +16,11 @@ const produtos = [
 {id:10, nome: "nome", preco:"400", descricao: "descricao", imagem:""},
 
 ]
+
+function buscarProdutoPorID(id){
+  const produto = produtos.find(produto => produto.id == id)
+  return produto || null
+} 
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -32,5 +38,5 @@ app.listen(port, () => {
 });
 
 app.get('/albumb.ejs', (req, res) => {
-  res.render("albumb");
+  res.render("albumb", {produto});
 });
