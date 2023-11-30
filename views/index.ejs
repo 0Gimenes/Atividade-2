@@ -34,28 +34,29 @@
     </nav>
 
 
-
-<% for (let produto of produtos){ %>
-
     <div class="container text-center">
       <div class="row">
-        <div class="col">
+        
+<% for (let produto of produtos){ %>
 
-          <div class="card" style="width: 18rem;">
-            <img src=<%= produto.i%> class="card-img-top" alt="...">
+          <div class="card" style="width: 18rem;  ">
+            <img src=<%= produto.imagem%> class="card-img-top" alt="...">
+            <div>
             <div class="card-body">
               <h5 class="card-title"><%= produto.nome%></h5>
               <h5 class="card-text"><%= produto.descricao%></h5>
               <h5 class="card-text"><%= produto.preco%></h5>
-              <a  href="albumb.ejs" class="btn btn-primary" >Comprar</a>
+              <a  href="/produtos/<%= produto.id%>" class="btn btn-primary" >Comprar</a>
             </div>
           </div>
-        </div>     
+        </div>
+        <%}%>
+        
         </div>
       </div>
-    </div>
+   
 <br>
-  <%}%>
+
    
           
 
